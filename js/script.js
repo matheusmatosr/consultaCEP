@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   const inputCep = $("#cep-input");
   const searchBtn = $("#search");
-  const infoMessage = $("#info-message"); // Added this line
+  const infoMessage = $("#info-message"); 
 
   const cityElement = $("#city");
   const stateElement = $("#state");
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
       return data;
     } catch (error) {
-      console.error("Erro ao buscar dados do CEP:", error);
+      console.error("Error fetching CEP data:", error);
       toggleLoader();
       throw error;
     }
@@ -55,6 +55,8 @@ $(document).ready(function () {
     try {
       const data = await getCepData(cep);
 
+      console.log("API response:", data);
+
       if (data.status === 200) {
         stateElement.text(data.state);
         cityElement.text(data.city);
@@ -70,6 +72,7 @@ $(document).ready(function () {
         showErrorMessage();
       }
     } catch (error) {
+      console.error("Error in showCepData:", error);
       showErrorMessage();
     }
   };
@@ -78,6 +81,8 @@ $(document).ready(function () {
     e.preventDefault();
 
     const cep = inputCep.val();
+
+    console.log("CEP entered:", cep);
 
     showCepData(cep);
     
