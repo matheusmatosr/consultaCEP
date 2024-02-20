@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta CEP</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <img src="./img/logo.png" alt="Logo" class="imgLogo"/>
+      <h3>Consulta CEP</h3>
+      <div class="form-input-container">
+        <input 
+          type="text"
+          placeholder="Digite o n° do CEP"
+          id="cep-input"
+          maxlength="10"
+        />
+        <button id="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Buscar
+        </button>
+      </div>
+    </div>
+
+    <div class="container-info" id="cep-data">
+      <h2>Rua: <span id="address"></span></h2>
+      <h2>Cidade: <span id="city"></span></h2>
+      <h2>Distrito: <span id="district"></span></h2>
+      <h2>Estado: <span id="state"></span></h2>
+    </div>
+
+    <div id="error-message" class="hide" style="margin-top: 60px; font-size: 25px;">
+      <p style="color:red">CEP inválido!</p>
+    </div>
+  
+    <div id="info-message" class="info-message">Informe o CEP acima!</div>
+
+    <div id="loader">
+      <i class="fa-solid fa-spinner"></i>
+    </div>
+  </div>
+</body>
+</html>
