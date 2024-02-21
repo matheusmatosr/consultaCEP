@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   const inputCep = $("#cep-input");
   const searchBtn = $("#search");
-  const infoMessage = $("#info-message"); // Added this line
+  const infoMessage = $("#info-message");
 
   const cityElement = $("#city");
   const stateElement = $("#state");
@@ -23,7 +23,7 @@ $(document).ready(function () {
   const getCepData = async (cep) => {
     toggleLoader();
 
-    const apiURL = `https://cdn.apicep.com/file/apicep/${cep}.json`;
+    const apiURL = `https://viacep.com.br/ws/${cep}/json/`;
 
     try {
       const res = await fetch(apiURL);
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
       return data;
     } catch (error) {
-      console.error("Erro ao buscar dados do CEP:", error);
+      console.error("Error fetching CEP data:", error);
       toggleLoader();
       throw error;
     }
@@ -55,21 +55,24 @@ $(document).ready(function () {
     try {
       const data = await getCepData(cep);
 
-      if (data.status === 200) {
-        stateElement.text(data.state);
-        cityElement.text(data.city);
-        addressElement.text(data.address);
-        districtElement.text(data.district);
+      console.log("API response:", data);
+
+      if (!data.erro) {
+        stateElement.text(data.uf);
+        cityElement.text(data.localidade);
+        addressElement.text(data.logradouro);
+        districtElement.text(data.bairro);
 
         cepContainer.removeClass("hide");
         cepContainer.addClass("show");
-        
+
         // Hide info-message
         infoMessage.addClass("hide");
       } else {
         showErrorMessage();
       }
     } catch (error) {
+      console.error("Error in showCepData:", error);
       showErrorMessage();
     }
   };
@@ -79,8 +82,10 @@ $(document).ready(function () {
 
     const cep = inputCep.val();
 
+    console.log("CEP entered:", cep);
+
     showCepData(cep);
-    
+
     infoMessage.addClass("hide");
   });
 
