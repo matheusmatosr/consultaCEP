@@ -188,26 +188,26 @@ body {
     position: relative;
     max-width: none;
     width: 100%;
-    left: 48%;
+    left: 49%;
   }
 
   .header {
-    width: 340px;
+    width: 350px;
   }
 
   .form{
-    width: 340px;
+    width: 350px;
   }
 
   .container-info{
-    width: 340px;
+    width: 350px;
   }
 
   .container-img {
     width: 100%;
     position: relative;
     top: 76%;
-    right: 51%;
+    right: 50%;
   }
 
   .imgLogo{
