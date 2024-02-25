@@ -188,30 +188,30 @@ body {
     position: relative;
     max-width: none;
     width: 100%;
-    left: 49%;
+    left: 45%;
   }
 
   .header {
-    width: 300px;
+    width: 330px;
   }
 
   .form{
-    width: 300px;
+    width: 330px;
   }
 
   .container-info{
-    width: 300px;
+    width: 330px;
   }
 
   .container-img {
     width: 100%;
     position: relative;
     top: 77%;
-    right: 53%;
+    right: 50%;
   }
 
   .imgLogo{
-    width: 365px;
+    width: 395px;
   }
 
   .form-input-container {
