@@ -6,7 +6,6 @@
 }
 
 body {
-  background: linear-gradient(180deg, rgb(10, 0, 125) 0%, #afbec9 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +19,7 @@ body {
 }
 
 .container {
-  background-color: #000069;
+  background: linear-gradient(180deg, #000038 0%, rgb(82, 77, 130)100%);
   box-shadow: rgb(255, 255, 255) 0px 3px 8px;
   padding: 2rem;
   color: #fdfdfd;
@@ -135,7 +134,6 @@ body {
 /* Imagem */
 .container-img {
   width: 50%;
-
   border-radius: 190px;
 }
 
@@ -174,8 +172,53 @@ body {
   padding: 10px;
 }
 
+.footer span{
+  cursor: pointer;
+}
+
 @keyframes rotate {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsividade p/ Telas Menores */
+@media screen and (max-width: 600px) {
+  .container {
+    position: relative;
+    max-width: none;
+    width: 100%;
+    left: 49%;
+  }
+
+  .header {
+    width: 300px;
+  }
+
+  .form{
+    width: 300px;
+  }
+
+  .container-info{
+    width: 300px;
+  }
+
+  .container-img {
+    width: 100%;
+    position: relative;
+    top: 77%;
+    right: 53%;
+  }
+
+  .imgLogo{
+    width: 365px;
+  }
+
+  .form-input-container {
+    flex-direction: inherit;
+  }
+
+  .form input {
+    width: 100%;
   }
 }
