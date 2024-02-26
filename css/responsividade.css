@@ -21,5 +21,8 @@
     width: 110px;
     height: 110px;
   }
-
+  
+  .footer span {
+    margin-right: 10px;
+  }
 }
