@@ -84,6 +84,11 @@ $(document).ready(function () {
 
     console.log("CEP entered:", cep);
 
+    if (cep.trim() === "") {
+      infoMessage.removeClass("hide");
+      return;
+    }
+
     showCepData(cep);
 
     infoMessage.addClass("hide");
